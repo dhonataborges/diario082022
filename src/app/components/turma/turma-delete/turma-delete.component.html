@@ -1,0 +1,26 @@
+<form class="form mat-elevation-z8">
+  <h1>Deletar Turma</h1>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Ano Letivo</mat-label>
+    <input [(ngModel)]="turma.anoLetivo" disabled name="anoLetivo" matInput placeholder="Ex. 2022, 2023, 2024...">
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Sala</mat-label>
+    <input [(ngModel)]="turma.sala" disabled name="sala" matInput placeholder="Ex. 01,02,03...">
+  </mat-form-field>
+
+  <div class="serie">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label> SALA: {{ turma.nomeSerieNivelSubnivel }}</mat-label>
+      <mat-select [(ngModel)]="turma.serieNivelSubnivel" name="tecnico" disabled>
+        <mat-option *ngFor="let serie of series" value="{{ serie.id }}">{{ serie.descricao }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="menuzao">
+    <button class="menu mat-elevation-z8" (click)="delete()" mat-raised-button id="add">DELETAR</button>
+    <button class="menu mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+  </div>
+</form>

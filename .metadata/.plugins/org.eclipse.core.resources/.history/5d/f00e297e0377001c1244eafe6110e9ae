@@ -1,0 +1,5 @@
+package com.borges.diario_eletronico.domain.taxpayer;
+
+public class Taxpayer {
+
+}

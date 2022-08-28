@@ -1,0 +1,61 @@
+<form class="form mat-elevation-z8">
+  <h1> Atualizar Disciplina </h1>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Ano de Atribuição</mat-label>
+    <input [(ngModel)]="disciplinaProfessor.dataAtribuicao" [ngModelOptions]="{standalone: true}" required
+      name="dataAtribuicao" matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Status: {{disciplinaProfessor.status}} </mat-label>
+    <mat-select [(ngModel)]="disciplinaProfessor.status" required name="status">
+      <mat-option value=0>Ativo</mat-option>
+      <mat-option value=1>Inativo</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Turma: {{ disciplinaProfessor.descricaoTurma }}</mat-label>
+    <mat-select [(ngModel)]="disciplinaProfessor.turma" name="descricaoTurma" required>
+      <mat-option *ngFor="let turma of turmas" value="{{ turma.id }}">{{ turma.nomeSerieNivelSubnivel }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Professor: {{ disciplinaProfessor.nomeProfessor }} </mat-label>
+    <mat-select [(ngModel)]="disciplinaProfessor.professor" name="nomeProfessor" required>
+      <mat-option *ngFor="let professor of professores" value="{{ professor.id }}">{{ professor.nome }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Disciplina: {{ disciplinaProfessor.nomeDisciplina }} </mat-label>
+    <mat-select [(ngModel)]="disciplinaProfessor.disciplina" name="nomeProfessor" required>
+      <mat-option *ngFor="let disciplina of disciplinas" value="{{ disciplina.id }}">{{ disciplina.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Bimestre {{ disciplinaProfessor.bimestre }} </mat-label>
+    <mat-select [(ngModel)]="disciplinaProfessor.bimestre" required name="bimestre">
+      <mat-option value=1>1°</mat-option>
+      <mat-option value=2>2°</mat-option>
+      <mat-option value=3>3°</mat-option>
+      <mat-option value=4>4°</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Ano Letivo</mat-label>
+    <input [(ngModel)]="disciplinaProfessor.anoLetivo" required name="anoLetivo" maxlength="100" matInput
+      placeholder="Ex. 2022, 2023, 2024...">
+  </mat-form-field>
+  <div class="menuzao">
+    <button class="menu mat-elevation-z8" (click)="update()" mat-raised-button id="add">ATUALIZAR</button>
+    <button class="menu mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+  </div>
+</form>

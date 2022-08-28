@@ -1,0 +1,96 @@
+package com.borges.diario_eletronico.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity(name = "usuario")
+public class User{
+
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	private boolean cargo;
+		
+	@Column(unique = true)
+	private String email;
+	
+	private String password;
+	
+	
+	public User() {
+		super();
+	}
+	
+	public User(Integer id,boolean cargo, String email, String password) {
+		super();
+		this.id = id;
+		this.cargo = cargo;
+		this.email = email;
+		this.password = password;
+	}
+	
+	public User(User obj) {
+		super();
+		this.id = obj.getId();
+		this.cargo = obj.getCargo();
+		this.email = obj.getemail();
+		this.password = obj.getPassword();
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+	public boolean isCargo() {
+		return cargo;
+	}
+
+	public void setCargo(boolean cargo) {
+		this.cargo = cargo;
+	}
+
+	public String getemail() {
+		return email;
+	}
+
+
+
+	public void setemail(String email) {
+		this.email = email;
+	}
+
+
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	
+	
+	
+	
+}

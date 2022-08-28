@@ -1,0 +1,44 @@
+package com.borges.diario_eletronico.service;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.borges.diario_eletronico.repository.UserRepository;
+
+@Service
+public class JwtUserDetailsService implements UserDetailsService {
+
+	@Autowired
+    private UserService userService;
+	
+	@Autowired
+	private UserRepository userRepository;
+	/*private User findByEmail1(User obj1){
+		User obj = userRepository.findByEmail1(obj1.getEmail());
+		if (obj != null) {
+			return obj;
+		}
+		return null;
+	}*/
+	
+	@Override
+	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+		//com.bootstrap.springboot.model.User user = userService.getByEmail(email);
+		
+		UserDetails userDetails = null;
+		 User obj = userRepository.findByEmail1(email);
+		
+		if (obj.equals(email)) {
+			return new User(email, obj.getPassword(),
+					new ArrayList<>());
+		} else {
+			throw new UsernameNotFoundException("User not found with email: " + email);
+		}
+	}
+}

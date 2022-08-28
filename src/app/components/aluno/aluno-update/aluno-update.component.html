@@ -1,0 +1,73 @@
+<form class="form mat-elevation-z8">
+  <h1>Atualizar Aluno</h1>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input [(ngModel)]="aluno.nome" [formControl]="nome" required name="nome" maxlength="100" matInput
+      placeholder="Ex. João Borges">
+  </mat-form-field>
+  <!--
+  <mat-form-field class="full-width" appearance="outline">
+  <mat-label>Data de Nascimento</mat-label>
+  <input [(ngModel)]="aluno.nascimento" [ngModelOptions]="{standalone: true}"  required name="nascimento" matInput [matDatepicker]="picker">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Selecione o Genero</mat-label>
+    <mat-select [(ngModel)]="aluno.sexo" [formControl]="sexo"required name="sexo" >
+      <mat-option value="masculino">Masculino</mat-option>
+      <mat-option value="feminino">Feminino</mat-option>
+    </mat-select>
+  </mat-form-field>  
+
+  <mat-form-field class="full-width" appearance="outline">
+      <mat-label>CPF</mat-label>
+      <input [(ngModel)]="aluno.cpf" [formControl]="cpf" required name="cpf" maxlength="15" matInput placeholder="000.000.000-00">
+     </mat-form-field>
+    
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>RG</mat-label>
+      <input [(ngModel)]="aluno.rg" [formControl]="rg" required name="rg" maxlength="15" matInput placeholder="00.000.000">
+     </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Responsavel</mat-label>
+      <input [(ngModel)]="aluno.responsavel" [formControl]="responsavel" required name="responsavel" maxlength="100" matInput placeholder="Ex. João Borges">
+    </mat-form-field>
+
+  <mat-form-field class="full-width"appearance="outline">
+      <mat-label>Telefone</mat-label>
+      <input [(ngModel)]="aluno.telefone" [formControl]="telefone" required name="telefone" maxlength="18" matInput placeholder="(00) 90000-0000">
+    </mat-form-field>
+
+    <mat-form-field class="full-width"appearance="outline">
+      <mat-label>Endereço</mat-label>
+      <input [(ngModel)]="aluno.endereco" [formControl]="endereco" required name="endereco" maxlength="50" matInput placeholder="Ex. Rua: São Paulo">
+    </mat-form-field>
+    
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Selecione o Zona</mat-label>
+      <mat-select [(ngModel)]="aluno.zona" [formControl]="zona" required >
+        <mat-option value="urbana">Urbana</mat-option>
+        <mat-option value="rural">Rural</mat-option>
+      </mat-select>
+    </mat-form-field>
+   -->
+  <div class="turma">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label> SALA TURMA: {{ aluno.salaTurma }}</mat-label>
+      <mat-select [(ngModel)]="aluno.turma" name="turma" [formControl]="turma" required>
+        <mat-option *ngFor="let turma of turmas" value="{{ turma.id }}">{{ turma.sala }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="menuzao">
+    <button class=" menu mat-elevation-z8" (click)="update()" (click)="validaCampos()" mat-raised-button
+      id="add">ATUALIZAR</button>
+    <button class=" menu mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+
+  </div>
+</form>

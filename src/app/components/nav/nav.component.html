@@ -1,0 +1,47 @@
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+        <img src="assets/img/logo site.png" alt="Imagem de navegação" />
+        <mat-nav-list class="nav-list">
+
+            <a mat-list-item routerLink="home">
+                <i class="material-icons">home</i>Home
+            </a>
+            
+            <a mat-list-item routerLink="portalProfessor">
+                <i class="material-icons">library_books</i>Painel do professor
+            </a>
+
+            <a mat-list-item [matMenuTriggerFor]="menu">
+                <mat-menu #menu="matMenu">
+                    <a routerLink="professores" mat-menu-item>Professor</a>
+                    <a routerLink="alunos" mat-menu-item>Alunos</a>
+                    <a routerLink="turmas" mat-menu-item>Turma</a>
+                    <a routerLink="disciplinas" mat-menu-item>Disciplinas</a>
+                </mat-menu>
+                <i class="material-icons">group_add</i>Cadastros
+            </a>
+
+            <a mat-list-item routerLink="disciplinaProfessor">
+                <i class="material-icons">supervised_user_circle</i>Enturmar Professor
+            </a>
+
+            <a mat-list-item (click)="sair()" id="sair">
+                <i class="material-icons">exit_to_app</i>Sair
+            </a>
+
+        </mat-nav-list>
+    </mat-drawer>
+
+    <div class="sidenav-content">
+        <app-header></app-header>
+        <button
+          class="menu mat-elevation-z8"
+          (click)="drawer.toggle()"
+          mat-icon-button
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <router-outlet></router-outlet>
+      </div>
+
+  </mat-drawer-container>

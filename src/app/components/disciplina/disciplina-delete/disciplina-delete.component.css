@@ -1,0 +1,47 @@
+.form {
+    width: 90%;
+    margin: auto;
+    padding: 4rem 2rem;
+}
+
+#add {
+    background-color: rgb(224, 111, 18);
+    color: white;
+} 
+
+.menu {
+    flex-wrap: wrap;
+    display: inline-block;
+    margin: 1rem;
+    width: 10rem;
+}
+
+.menuzao {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 4rem;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+button {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+  .email-full-width {
+    width: 100%;
+  }
+
+  .mat-form-field-appearance-fill {
+      width: 100%;
+  }

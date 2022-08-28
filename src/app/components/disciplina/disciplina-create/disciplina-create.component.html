@@ -1,0 +1,23 @@
+<form class="form mat-elevation-z8">
+  <h1>Cadastrar Disciplinas</h1>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Disciplina</mat-label>
+    <input [(ngModel)]="disciplina.nome" required name="nome" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Ementa</mat-label>
+    <input [(ngModel)]="disciplina.ementa" required name="ementa" matInput>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Selecione um Serie</mat-label>
+    <mat-select [(ngModel)]="disciplina.serieNivelSubnivel" name="serieNivelSubnivel" required>
+      <mat-option *ngFor="let serie of series" value="{{ serie.id }}">{{ serie.descricao }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="menuzao">
+    <button class="menu mat-elevation-z8" (click)="create()" mat-raised-button id="add">CRIAR</button>
+    <button class="menu mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+  </div>
+</form>

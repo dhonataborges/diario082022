@@ -1,0 +1,55 @@
+.form {
+    width: 90%;
+    margin: auto;
+    padding: 4rem 2rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 4rem;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+button {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.section {
+    text-align: right;
+}
+
+.mat-checkbox {
+    font-weight: bold;
+}
+
+.margin {
+    margin: 15px 15px;
+}
+
+.menuzao {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+.menu {
+    flex-wrap: wrap;
+    display: inline-block;
+    margin: 1rem;
+    width: 10rem;
+}
+
+#add {
+    background-color: rgb(20, 184, 34);
+    color: white;
+}

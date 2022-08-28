@@ -1,0 +1,20 @@
+<form class="form mat-elevation-z8">
+    <h1>Adicionar Aluno</h1>
+
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Selecione o Aula</mat-label>
+        <mat-select [(ngModel)]="frequencia.aula" name="aluno" required>
+            <mat-option *ngFor="let aula of aulas" value="{{ aula.id }}">{{ aula.conteudo }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Selecione o Aluno</mat-label>
+        <mat-select [(ngModel)]="frequencia.aluno" name="aluno" required>
+            <mat-option *ngFor="let aluno of alunos" value="{{ aluno.id }}">{{ aluno.nome }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button class="mat-elevation-z8" (click)="create()" mat-raised-button color="primary">ADICIONAR</button>
+    <button class="mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+</form>

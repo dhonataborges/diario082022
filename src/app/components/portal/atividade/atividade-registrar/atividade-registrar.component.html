@@ -1,0 +1,44 @@
+<form class="form mat-elevation-z8">
+    <h1>Criar Atividades</h1>
+
+    <mat-form-field class="full-width" color="accent" appearance="outline">
+        <mat-label>Data de Inicio</mat-label>
+        <input [(ngModel)]="atividades.dataCriacao" matInput [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" color="accent" appearance="outline">
+        <mat-label>Data de Entrega</mat-label>
+        <input [(ngModel)]="atividades.dataEntrega" matInput [matDatepicker]="picker2">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 color="primary"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Selecione o Disciplina</mat-label>
+        <mat-select [(ngModel)]="atividades.disciplina" name="tecnico" required>
+            <mat-option *ngFor="let disc of discs" value="{{ disc.id }}">{{ disc.nomeDisciplina }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Tipo da Atividade</mat-label>
+        <input [(ngModel)]="atividades.tipo" required name="tipo" matInput>
+    </mat-form-field>
+
+    <form class="full-width">
+        <mat-form-field class="full-width">
+            <mat-label>Adicione o conteúdo</mat-label>
+            <textarea [(ngModel)]="atividades.descricao" name="descricao" matInput required></textarea>
+        </mat-form-field>
+    </form>
+
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Nota Maxima</mat-label>
+        <input [(ngModel)]="atividades.notaMaxima" type="number" required name="notaMaxima" matInput>
+    </mat-form-field>
+
+    <button class="mat-elevation-z8" (click)="create()" mat-raised-button color="primary">CRIAR</button>
+    <button class="mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+</form>

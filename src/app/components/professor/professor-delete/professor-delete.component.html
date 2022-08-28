@@ -1,0 +1,24 @@
+<form class="form mat-elevation-z8">
+  <h1>Deletar Professor</h1>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input [(ngModel)]="prof.nome" disabled maxlength="100" matInput placeholder="Ex. João Borges">
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>E-mail</mat-label>
+    <input [(ngModel)]="prof.email" disabled required matInput placeholder="Ex.. fulano@mail.com">
+    <mat-icon matSuffix>email</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Senha</mat-label>
+    <input [(ngModel)]="prof.senha" disabled required type="password" matInput placeholder="Ex.. 1234">
+    <mat-icon matSuffix>password</mat-icon>
+  </mat-form-field>
+  <div class="menuzao">
+    <button class="menu mat-elevation-z8" (click)="delete()" mat-raised-button id="add">DELETAR</button>
+    <button class="menu mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+  </div>
+</form>

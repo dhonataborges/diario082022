@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgb(164, 162, 204) 0%, rgb(65, 91, 134) 0%, rgb(130, 197, 209) 100%);
+    margin-top: .0rem;
+    padding: 2rem 3%;
+}
+.mat-card-avatar {
+    float: left;
+    flex-direction: column-reverse;
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+    position: absolute;
+  }
+  p {
+      margin-top: 2.4rem;
+      text-align: center;
+  }

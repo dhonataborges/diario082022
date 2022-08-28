@@ -1,0 +1,5 @@
+package com.borges.diario_eletronico.controller.auth;
+
+public class Login {
+
+}

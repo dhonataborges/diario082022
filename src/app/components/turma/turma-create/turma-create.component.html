@@ -1,0 +1,26 @@
+<form class="form mat-elevation-z8">
+  <h1>Cadastrar Turma</h1>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Ano Letivo</mat-label>
+    <input [(ngModel)]="turma.anoLetivo" required name="anoLetivo" maxlength="100" matInput
+      placeholder="Ex. 2022, 2023, 2024...">
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Sala</mat-label>
+    <input [(ngModel)]="turma.sala" required name="sala" maxlength="100" matInput placeholder="Ex. 01,02,03...">
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Selecione um Serie</mat-label>
+    <mat-select [(ngModel)]="turma.serieNivelSubnivel" name="tecnico" [formControl]="serieNivelSubnivel" required>
+      <mat-option *ngFor="let serie of series" value="{{ serie.id }}">{{ serie.descricao }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="menuzao">
+    <button class=" menu mat-elevation-z8" (click)="create()" mat-raised-button id="add">CRIAR</button>
+    <button class=" menu mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+  </div>
+</form>

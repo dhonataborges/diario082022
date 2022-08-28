@@ -1,0 +1,48 @@
+<div class="create">
+  <h1>Professores Cadastrados</h1>
+  <button (click)="navigateToCreate()" class="mat-elevation-z8 container" mat-button color="primary">CADASTRAR UM NOVO
+    PROFESSOR</button>
+</div>
+
+<div class="mat-elevation-z8 container">
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Nome Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> NOME </th>
+      <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+    </ng-container>
+
+    <!-- Nome Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> EMAIL </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <!-- Ações Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> AÇÕES </th>
+      <td mat-cell *matCellDef="let element">
+        <a routerLink="update/{{ element.id }}">
+          <i id="editar" class="material-icons">editar</i>
+        </a>
+        <a routerLink="delete/{{ element.id }}">
+          <i id="delete" class="material-icons">delete</i>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[1, 2, 5, 10, 20, 50, 100]" showFirstLastButtons
+    aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>

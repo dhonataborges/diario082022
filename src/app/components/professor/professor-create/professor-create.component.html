@@ -1,0 +1,36 @@
+<form class="form mat-elevation-z8">
+  <h1>Cadastrar Professor</h1>
+
+
+  <section class="section">
+    <mat-checkbox (click)="addPerfil(0)" class="margin" color="primary">Admin</mat-checkbox>
+    <mat-checkbox (click)="addPerfil(1)" [checked]="true" class="margin" color="primary">Professor</mat-checkbox>
+  </section>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input [(ngModel)]="prof.nome" [formControl]="nome" required name="nome" maxlength="100" matInput
+      placeholder="Ex. João Borges">
+    <mat-error *ngIf="nome.invalid">{{ errorValidNome() }}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>E-mail</mat-label>
+    <input [(ngModel)]="prof.email" name="email" [formControl]="email" required matInput
+      placeholder="Ex.. fulano@mail.com">
+    <mat-icon matSuffix>email</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Senha</mat-label>
+    <input [(ngModel)]="prof.senha" name="senha" [formControl]="senha" required type="password" matInput
+      placeholder="Ex.. 1234">
+    <mat-icon matSuffix>password</mat-icon>
+  </mat-form-field>
+  
+  <div class="menuzao">
+    <button class="menu mat-elevation-z8" (click)="create()" mat-raised-button id="add">CRIAR</button>
+    <button class="menu mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+
+  </div>
+</form>

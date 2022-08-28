@@ -1,0 +1,25 @@
+<form class="form mat-elevation-z8">
+    <h1>Adicionar Nota</h1>
+      
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Selecione o Aluno</mat-label>
+        <mat-select [(ngModel)]="alunoAtividade.aluno" name="aluno" required>
+            <mat-option *ngFor="let aluno of alunos" value="{{ aluno.id }}">{{ aluno.nome }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Selecione o Atividade</mat-label>
+        <mat-select [(ngModel)]="alunoAtividade.atividade" name="aluno" required>
+            <mat-option *ngFor="let atividade of atividades" value="{{ atividade.id }}">{{ atividade.tipo }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Nota</mat-label>
+        <input [(ngModel)]="alunoAtividade.nota" type="number" required name="notaMaxima" matInput>
+    </mat-form-field>
+
+    <button class="mat-elevation-z8" (click)="create()" mat-raised-button color="primary">CRIAR</button>
+    <button class="mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+</form>

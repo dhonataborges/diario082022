@@ -1,0 +1,61 @@
+<h1>Frequência</h1>
+<div class="menuzao">
+
+  <div class="menu">
+    <button class="full-width mat-elevation-z4" (click)="navigateTurmaAlunos()" color="warn" mat-stroked-button>
+      <i class="material-icons">reply</i> VOLTAR
+    </button>
+  </div>
+
+  <div class="menu">
+    <button (click)="navigateToCreate()" class="mat-elevation-z8" mat-button id="add">
+      <i class="material-icons">add_box</i> ADICIONAR ALUNO
+    </button>
+  </div>
+
+  <!-- <div class="menu">
+    <button (click)="navigateToUpdate()" class="mat-elevation-z8" id="editar" mat-button> 
+      <i class="material-icons">create</i> EDITAR
+    </button>
+  </div>
+
+  <div class="menu">
+    <button (click)="navigateToCreate()" class="mat-elevation-z8" mat-button id="delete"> 
+      <i class="material-icons">delete</i> EXCLUIR
+    </button>
+  </div>
+</div>
+-->
+  <div class="mat-elevation-z8 container">
+    <table mat-table [dataSource]="dataSource">
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}}
+        </td>
+      </ng-container>
+
+      <!-- Nome Column -->
+      <ng-container matColumnDef="nomeAluno">
+        <th mat-header-cell *matHeaderCellDef> ALUNO </th>
+        <td mat-cell *matCellDef="let element"> {{element.nomeAluno}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="frequencia">
+        <th mat-header-cell *matHeaderCellDef> FREQUÊNCIA </th>
+        <td mat-cell *matCellDef="let element">
+          <input type="checkbox" (change)="CheckBox($event)" />
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[1, 2, 5, 10, 20, 50, 100]" showFirstLastButtons
+      aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
