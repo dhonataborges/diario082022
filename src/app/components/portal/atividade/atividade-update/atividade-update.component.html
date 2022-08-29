@@ -38,7 +38,9 @@
         <mat-label>Nota Maxima</mat-label>
         <input [(ngModel)]="atividades.notaMaxima" type="number" required name="notaMaxima" matInput>
     </mat-form-field>
-
-    <button class="mat-elevation-z8" (click)="update()" mat-raised-button color="primary">ATUALIZAR</button>
-    <button class="mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+    
+    <div class="menuzao">
+        <button class=" menu mat-elevation-z8" (click)="update()" mat-raised-button id="add">ATUALIZAR</button>
+        <button class=" menu mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+    </div>
 </form>

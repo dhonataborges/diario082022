@@ -29,7 +29,8 @@ h1 {
 }
 
 .full-width {
-    width: 100%;
+    width: 46%;
+    margin: 1rem;
     margin-bottom: 1rem;
 }
 

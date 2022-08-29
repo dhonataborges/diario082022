@@ -53,6 +53,9 @@ td.mat-cell {
 
 }
 
-h1{
+h1 {
   text-align: center;
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 2rem;
 }

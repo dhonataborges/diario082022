@@ -1,5 +1,5 @@
 <form class="form mat-elevation-z8">
-  <h1>Criar Aula</h1>
+  <h1>Registrar Aula</h1>
 
   <mat-form-field class="full-width" appearance="outline">
     <mat-label>Data</mat-label>
@@ -18,7 +18,7 @@
     <mat-label>Hora Fim</mat-label>
     <input [(ngModel)]="aulas.horaFim" required name="horaFim" type="time" matInput>
   </mat-form-field>
-  
+
   <mat-form-field class="full-width" appearance="outline">
     <mat-label>Selecione o Disciplina</mat-label>
     <mat-select [(ngModel)]="aulas.disciplina" name="tecnico" required>
@@ -32,7 +32,8 @@
       <textarea [(ngModel)]="aulas.conteudo" name="conteudo" matInput maxlength="255" required></textarea>
     </mat-form-field>
   </form>
-
-  <button class="mat-elevation-z8" (click)="create()" mat-raised-button color="primary">REGISTRAR</button>
-  <button class="mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+  <div class="menuzao">
+    <button class=" menu mat-elevation-z8" (click)="create()" mat-raised-button id="add">REGISTRAR</button>
+    <button class=" menu mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+  </div>
 </form>

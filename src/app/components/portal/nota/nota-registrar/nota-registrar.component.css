@@ -1,7 +1,24 @@
 .form {
-    width: 95%;
+    width: 90%;
     margin: auto;
     padding: 4rem 2rem;
+}
+
+.menu {
+    flex-wrap: wrap;
+    display: inline-block;
+    margin: 1rem;
+    width: 10rem;
+}
+
+.menuzao {
+    margin-top: 2rem;
+    text-align: right;
+}
+
+#add {
+    background-color: rgb(20, 184, 34);
+    color: white;
 }
 
 h1 {

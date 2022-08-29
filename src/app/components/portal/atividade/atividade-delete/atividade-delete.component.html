@@ -26,7 +26,7 @@
         <mat-label>Tipo da Atividade</mat-label>
         <input disabled [(ngModel)]="atividades.tipo" required name="tipo" matInput>
     </mat-form-field>
-    
+
     <form class="full-width">
         <mat-form-field class="full-width">
             <mat-label>Adicione o conteúdo</mat-label>
@@ -39,6 +39,8 @@
         <input disabled [(ngModel)]="atividades.notaMaxima" type="number" required name="notaMaxima" matInput>
     </mat-form-field>
 
-    <button class="mat-elevation-z8" (click)="delete()" mat-raised-button color="primary">DELETAR</button>
-    <button class="mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+    <div class="menuzao">
+        <button class=" menu mat-elevation-z8" (click)="delete()" mat-raised-button id="add">DELETAR</button>
+        <button class=" menu mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+    </div>
 </form>

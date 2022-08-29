@@ -1,6 +1,6 @@
 <form class="form mat-elevation-z8">
     <h1>Deletar Nota</h1>
-      
+
     <mat-form-field class="full-width" appearance="outline">
         <mat-label>ALUNO: {{alunoAtividade.nomeAluno}}</mat-label>
         <mat-select [(ngModel)]="alunoAtividade.aluno" name="aluno" disabled>
@@ -11,7 +11,8 @@
     <mat-form-field class="full-width" appearance="outline">
         <mat-label>ATIVIDADE: {{alunoAtividade.nomeAtividadeTipo}}</mat-label>
         <mat-select [(ngModel)]="alunoAtividade.atividade" name="aluno" disabled>
-            <mat-option *ngFor="let atividade of atividades" value="{{ atividade.id }}">{{ atividade.tipo }}</mat-option>
+            <mat-option *ngFor="let atividade of atividades" value="{{ atividade.id }}">{{ atividade.tipo }}
+            </mat-option>
         </mat-select>
     </mat-form-field>
 
@@ -20,6 +21,8 @@
         <input [(ngModel)]="alunoAtividade.nota" type="number" disabled name="notaMaxima" matInput>
     </mat-form-field>
 
-    <button class="mat-elevation-z8" (click)="delete()" mat-raised-button color="primary">DELETAR</button>
-    <button class="mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+    <div class="menuzao">
+        <button class=" menu mat-elevation-z8" (click)="delete()" mat-raised-button id="add">DELETAR</button>
+        <button class=" menu mat-elevation-z8" (click)="cancel()" mat-raised-button color="warn">CANCELAR</button>
+    </div>
 </form>
