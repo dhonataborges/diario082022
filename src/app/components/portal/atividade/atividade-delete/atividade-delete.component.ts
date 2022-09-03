@@ -53,7 +53,7 @@ export class AtividadeDeleteComponent implements OnInit {
 
   delete(): void {
     this.service.delete(this.atividades.id).subscribe(() => {
-      this.toast.error('Atividade deletato com sucesso!', 'Deletado');
+      this.toast.error('Atividade excluida com sucesso!');
       this.router.navigate(['atividades']);
     }, ex => {
       if (ex.error.errors) {

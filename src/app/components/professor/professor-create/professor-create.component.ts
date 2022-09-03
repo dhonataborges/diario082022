@@ -62,7 +62,7 @@ export class ProfessorCreateComponent implements OnInit {
   
   create(): void {
     this.service.create(this.prof).subscribe(() => {
-      this.toast.success('professor cadastrado com sucesso!', 'Cadastro');
+      this.toast.success('Professor cadastrado com sucesso!');
       this.router.navigate(['professores']);
     }, ex => {
       if(ex.error.errors) {

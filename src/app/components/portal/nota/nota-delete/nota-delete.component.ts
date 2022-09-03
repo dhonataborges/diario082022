@@ -57,7 +57,7 @@ export class NotaDeleteComponent implements OnInit {
 
   delete(): void {
     this.service.delete(this.alunoAtividade.id).subscribe(() => {
-      this.toast.error('Aulas deletato com sucesso!', 'Deletado');
+      this.toast.error('Nota excluida com sucesso!');
       this.router.navigate(['notas']);
     }, ex => {
       if (ex.error.errors) {

@@ -52,7 +52,7 @@ export class AlunoDeleteComponent implements OnInit {
   }
   delete(): void {
     this.service.delete(this.aluno.id).subscribe(() => {
-      this.toast.success('aluno deletato com sucesso!', 'Delete');
+      this.toast.success('Aluno excluído com sucesso!');
       this.router.navigate(['alunos']);
     }, ex => {
       if(ex.error.errors) {

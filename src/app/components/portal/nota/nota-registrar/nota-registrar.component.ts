@@ -46,7 +46,7 @@ export class NotaRegistrarComponent implements OnInit {
 
   create(): void {
     this.service.create(this.alunoAtividade).subscribe(() => {
-      this.toast.success('Nota registrada com sucesso!', 'Registro');
+      this.toast.success('Nota registrada com sucesso!');
       this.router.navigate(['notas']);
     }, err => {
       if (err.error.error.match('já cadastrado')) {

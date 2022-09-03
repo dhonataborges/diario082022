@@ -48,8 +48,8 @@ export class TurmaCreateComponent implements OnInit {
   
   create(): void {
     this.turmaService.create(this.turma).subscribe((resposta) => {
+      this.toast.success('Turma cadastrada com sucesso!')
       this.router.navigate(['turmas'])
-      this.toast.success('Turma adicionadas com sucesso!')
     })
   }
 

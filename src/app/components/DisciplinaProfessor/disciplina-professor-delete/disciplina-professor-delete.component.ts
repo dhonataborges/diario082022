@@ -69,15 +69,14 @@ export class DisciplinaProfessorDeleteComponent implements OnInit {
 
   delete(): void {
     this.service.delete(this.disciplinaProfessor.id).subscribe(() => {
-      this.toast.error('Deletato com sucesso!', 'Delete');
-      this.router.navigate(['entrumacao']);
+      this.toast.error('Enturmação excluida com sucesso!');
+      this.router.navigate(['disciplinaProfessor']);
     }, err => {
       if (err.error.error.match('possui aulas')) {
         this.toast.error(err.error.error);
       }
     })
   }
-
 
   listarProf(): void {
     this.professorService.findAll().subscribe(resposta => {

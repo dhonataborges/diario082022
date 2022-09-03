@@ -52,7 +52,7 @@ export class TurmaUpdateComponent implements OnInit {
 
   update(): void {
     this.service.update(this.turma).subscribe(() => {
-      this.toast.success('Turma atualizada com sucesso!', 'Atualizar Turma');
+      this.toast.success('Turma atualizada com sucesso!');
       this.router.navigate(['turmas']);
     }, ex => {
       this.toast.error(ex.error.error);

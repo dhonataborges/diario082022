@@ -57,7 +57,7 @@ export class ProfessorUpdadeComponent implements  OnInit {
   
   update(): void {
     this.service.update(this.prof).subscribe(() => {
-      this.toast.success('Professor atualizado com sucesso!', 'Update');
+      this.toast.success('Professor atualizado com sucesso!');
       this.router.navigate(['professores']);
     }, ex => {
       if(ex.error.errors) {

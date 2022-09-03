@@ -57,7 +57,7 @@ export class DisciplinaDeleteComponent implements OnInit {
 
   delete(): void {
     this.service.delete(this.disciplina.id).subscribe(() => {
-      this.toast.error('Disciplina deletada com sucesso!', 'Delete');
+      this.toast.error('Disciplina excluída com sucesso!');
       this.router.navigate(['disciplinas']);
     }, err => {
       if (err.error.error.match('possui alunos')) {

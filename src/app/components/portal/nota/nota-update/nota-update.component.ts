@@ -58,7 +58,7 @@ export class NotaUpdateComponent implements OnInit {
 
   update(): void {
     this.service.update(this.alunoAtividade).subscribe(() => {
-      this.toast.success('Atividade atualizada com sucesso!', 'Atualizar Atividade');
+      this.toast.success('Nota atualizada com sucesso!');
       this.router.navigate(['notas']);
     }, ex => {
       this.toast.error(ex.error.error);

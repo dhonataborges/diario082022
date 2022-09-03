@@ -50,7 +50,7 @@ export class AlunoCreateComponent implements OnInit {
 
   create(): void {
     this.service.create(this.aluno).subscribe(() => {
-      this.toast.success('Aluno cadastrado com sucesso!', 'Cadastro');
+      this.toast.success('Aluno cadastrado com sucesso!');
       this.router.navigate(['alunos']);
     }, err => {
       console.log(err)

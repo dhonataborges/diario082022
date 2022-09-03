@@ -59,7 +59,7 @@ export class AulaDeleteComponent implements OnInit {
 
   delete(): void {
     this.service.delete(this.aulas.id).subscribe(() => {
-      this.toast.error('Aulas deletato com sucesso!', 'Delete');
+      this.toast.error('Aula excluida com sucesso!');
       this.router.navigate(['aulas']);
     }, ex => {
       if (ex.error.errors) {

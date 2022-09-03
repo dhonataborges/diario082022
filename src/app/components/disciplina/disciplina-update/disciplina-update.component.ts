@@ -57,7 +57,7 @@ export class DisciplinaUpdateComponent implements OnInit {
 
   update(): void {
     this.service.update(this.disciplina).subscribe(() => {
-      this.toast.success('disciplina atualizada com sucesso!', 'Atualizar disciplina');
+      this.toast.success('disciplina atualizada com sucesso!');
       this.router.navigate(['disciplinas']);
     }, ex => {
       this.toast.error(ex.error.error);

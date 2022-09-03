@@ -51,7 +51,7 @@ export class AulaRegistrarComponent implements OnInit {
 
   create(): void {
     this.service.create(this.aulas).subscribe(() => {
-      this.toast.success('Aula registrada com sucesso!', 'Registrado');
+      this.toast.success('Aula registrada com sucesso!');
       this.router.navigate(['aulas']);
     })
   }

@@ -1,9 +1,9 @@
+import { Professor } from './../../../models/professor';
 
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Professor } from 'src/app/models/professor';
 import { ProfessorService } from 'src/app/services/professor.service';
 
 @Component({
@@ -20,9 +20,9 @@ export class ProfessorDeleteComponent implements OnInit {
     sexo: '',
     cpf: '',
     rg: '',
-    telefone: '',
+    telefone: '', 
     endereco: '',
-    zona: '',
+	  zona: '',
     email: '',
     senha: '',
     perfis: []
@@ -48,15 +48,20 @@ export class ProfessorDeleteComponent implements OnInit {
   }
   
   findById(): void {
-    this.service.findById(this.prof.id).subscribe(resposta => {      
+    this.service.findById(this.prof.id).subscribe(resposta => {     
+      console.log("response", resposta.nome) 
       resposta.perfis = [];
-      this.prof = resposta;
+      this.prof.id = resposta.id;
+      this.prof.nome = resposta.nome;
+      this.prof.email = resposta.email;
+      this.prof.senha = resposta.senha; 
+      console.log("response", this.prof)
     })
   }  
   
   delete(): void {
-    this.service.delete(this.prof).subscribe(() => {
-      this.toast.error('Cliente deletato com sucesso!', 'Delete');
+    this.service.delete(this.prof.id).subscribe(() => {
+      this.toast.error('Professor excluido com sucesso!');
       this.router.navigate(['professores']);
     }, ex => {
       if(ex.error.errors) {

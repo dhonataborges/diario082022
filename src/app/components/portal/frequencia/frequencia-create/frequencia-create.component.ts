@@ -46,7 +46,7 @@ export class FrequenciaCreateComponent implements OnInit {
 
   create(): void {
     this.service.create(this.frequencia).subscribe(() => {
-      this.toast.success('Aluno adicionado com sucesso!', 'Registro');
+      this.toast.success('Aluno adicionado com sucesso!');
       this.router.navigate(['frequencia']);
     }, err => {
       if (err.error.error.match('já cadastrado')) {

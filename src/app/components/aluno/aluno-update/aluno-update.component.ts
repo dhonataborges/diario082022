@@ -63,7 +63,7 @@ export class AlunoUpdateComponent implements  OnInit {
   
   update(): void {
     this.service.update(this.aluno).subscribe(() => {
-      this.toast.success('Aluno atualizado com sucesso!', 'Atualizar Aluno');
+      this.toast.success('Aluno atualizado com sucesso!');
       this.router.navigate(['alunos']);
     }, ex => {
       if(ex.error.errors) {
