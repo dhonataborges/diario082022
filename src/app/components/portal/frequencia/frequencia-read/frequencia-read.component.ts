@@ -70,4 +70,9 @@ export class FrequenciaReadComponent implements AfterViewInit {
     this.router.navigate(['frequencia/update/:id'])
   }
 
+  navigateToResgistra(): void {
+    this.toast.success('Registro realizado sucesso!');
+    this.router.navigate(['turmaAlunos']);
+  }
+
 }

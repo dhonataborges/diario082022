@@ -10,9 +10,9 @@
 
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Selecione o Status</mat-label>
-      <mat-select [(ngModel)]="disciplinaProfessor.status" required name="status">
+      <mat-select [(ngModel)]="disciplinaProfessor.status" required name="status" type="checked">
         <mat-option value= 1>ATIVO</mat-option>
-        <mat-option value= 2>INATIVO</mat-option>
+        <mat-option value= 2>AUSENTE</mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -40,7 +40,7 @@
 
     <mat-form-field class="full-width" appearance="outline">
         <mat-label>Selecione o Bimestre</mat-label>
-        <mat-select [(ngModel)]="disciplinaProfessor.bimestre" required name="bimestre">
+        <mat-select [(ngModel)]="disciplinaProfessor.bimestre" required name="bimestre" type="checked">
           <mat-option value= 1>1°</mat-option>
           <mat-option value= 2>2°</mat-option>
           <mat-option value= 3>3°</mat-option>

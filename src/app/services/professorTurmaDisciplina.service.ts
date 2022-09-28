@@ -1,3 +1,4 @@
+import { API_CONFIG } from './../config/api.config';
 import { Turma } from '../models/turma';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,49 +12,34 @@ import { ProfessorTurmaDisciplina } from '../models/professorTurmaDisciplina';
 })
 export class professorTurmaDisciplinaService {
 
-  baseUrl: String = environment.baseUrl;
-
-  constructor(
-    private http : HttpClient,
+  constructor(private http : HttpClient,
     private snack : MatSnackBar ) {}
 
-    findAll():Observable<ProfessorTurmaDisciplina[]> {
-      const url = this.baseUrl + "/professorTurmaDisciplina"
-      return this.http.get<ProfessorTurmaDisciplina[]>(url);
-    }
-
-    /** MÉTODO DE BUSCAR UM Turma PELO ID. ELE PREENCHE OS CAMPOS DO FORMULARIO PARAARIO NÃO 
-   * PRECISAR DIGITAR NA HORA DE ATUALIZAR OS DADOS DO CLIENTE*/
     findById(id: any): Observable<ProfessorTurmaDisciplina> {
-    const url = this.baseUrl + "/professorTurmaDisciplina/" + id;
-    return this.http.get<ProfessorTurmaDisciplina>(url);
-  }
-
-   /** MÉTODO PARA CRIAR UM NOVO CLIENTE*/
-   create(professorTurmaDisciplina: ProfessorTurmaDisciplina): Observable<ProfessorTurmaDisciplina> {
-    const url = this.baseUrl + "/professorTurmaDisciplina";
-    return this.http.post<ProfessorTurmaDisciplina>(url, professorTurmaDisciplina);
-  }
-
-  /** MÉTODO DE ATUALIZAR CLIENTE */
-  update(professorTurmaDisciplina: ProfessorTurmaDisciplina): Observable<ProfessorTurmaDisciplina> {
-    const url = this.baseUrl + "/professorTurmaDisciplina/" + professorTurmaDisciplina.id;
-    return this.http.put<ProfessorTurmaDisciplina>(url, professorTurmaDisciplina);
-  }
-
-   /** MÉTODO DE DELETAR CLIENTE */
-   delete(id : any):Observable<void> {
-    const url = this.baseUrl + "/professorTurmaDisciplina/" + id;
-    return this.http.delete<void>(url);
-  }
-
-
-  message(msg: String): void {
-    this.snack.open(`${msg}`, 'OK', {
+      return this.http.get<ProfessorTurmaDisciplina>(`${API_CONFIG.baseUrl}/professorTurmaDisciplina/${id}`);
+      }
+      
+      findAll(): Observable<ProfessorTurmaDisciplina[]> {
+      return this.http.get<ProfessorTurmaDisciplina[]>(`${API_CONFIG.baseUrl}/professorTurmaDisciplina`);
+      }
+      
+      create(professorTurmaDisciplina: ProfessorTurmaDisciplina): Observable<ProfessorTurmaDisciplina> {
+      return this.http.post<ProfessorTurmaDisciplina>(`${API_CONFIG.baseUrl}/professorTurmaDisciplina`, professorTurmaDisciplina);
+      }
+      
+      update(professorTurmaDisciplina: ProfessorTurmaDisciplina): Observable<ProfessorTurmaDisciplina> {
+      return this.http.put<ProfessorTurmaDisciplina>(`${API_CONFIG.baseUrl}/professorTurmaDisciplina/${professorTurmaDisciplina.id}`, professorTurmaDisciplina);
+      }
+      
+      delete(id: any): Observable<ProfessorTurmaDisciplina> {
+      return this.http.delete<ProfessorTurmaDisciplina>(`${API_CONFIG.baseUrl}/professorTurmaDisciplina/${id}`);
+      }
+      
+      message(msg: String): void {
+      this.snack.open(`${msg}`, 'OK', {
       horizontalPosition: 'end',
       verticalPosition: 'top',
       duration: 4000
-    })
-
-}
-}
+      })
+      }
+      }

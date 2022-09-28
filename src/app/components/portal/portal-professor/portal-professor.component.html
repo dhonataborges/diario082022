@@ -1,17 +1,18 @@
 <div class="container">
+    <h1>Painel do Professor</h1>
     <mat-card class="home mat-elevation-z8">
         <div class="title">
             <i class="material-icons">book</i> DIÁRIOS
         </div>
-        <span *ngFor="let item of disciplinas">
+        <span *ngFor="let item of disciplinas, let i = index">
             <mat-card class=" cardTurma mat-elevation-z8">
                 <mat-card-header>
                     <mat-card-title>Turma: {{ item.descricaoTurma }}</mat-card-title>
                     <mat-card-title>
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Selecione uma Disciplina</mat-label>
-                            <mat-select [(ngModel)]="disciplinaProfessor.disciplina" name="descricaoTurma" required>
-                                <mat-option *ngFor="let disciplina of disciplinas" value="{{ disciplina.id }}">{{ disciplina.nomeDisciplina }}</mat-option>
+                            <mat-select [(ngModel)]="disciplinaProfessor.disciplina" [name]="'disciplina' + i" type="select" required>
+                                <mat-option *ngFor="let disciplina of disciplinas, let i = index" value="{{ disciplina.id }}">{{ disciplina.nomeDisciplina }}</mat-option>
                             </mat-select>
                         </mat-form-field>
                     </mat-card-title>

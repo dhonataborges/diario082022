@@ -52,6 +52,8 @@ export class AtividadeUpdateComponent implements OnInit {
     }
     
     update(): void {
+      
+      console.log("Teste:", this.atividades);
       this.service.update(this.atividades).subscribe(() => {
         this.toast.success('Atividades atualizada com sucesso!');
         this.router.navigate(['atividades']);

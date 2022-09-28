@@ -36,7 +36,10 @@ export class PortalProfessorComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAll();
-    this.listarDisciplina();
+   // for (let i = 0; i < this.disciplinas.length; i++) {
+   //   this.disciplinaProfessor.disciplina = this.disciplinas[i];
+    //}
+    //this.listarDisciplina();
   }
 
   navigateTurmaAlunos(): void {

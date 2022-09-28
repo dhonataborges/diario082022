@@ -11,9 +11,9 @@
 
   <mat-form-field class="full-width" appearance="outline">
     <mat-label>Status: {{disciplinaProfessor.status}} </mat-label>
-    <mat-select [(ngModel)]="disciplinaProfessor.status" disabled name="status">
-      <mat-option value=0>Ativo</mat-option>
-      <mat-option value=1>Inativo</mat-option>
+    <mat-select [(ngModel)]="disciplinaProfessor.status" disabled name="status" typeaheadDebounceInterval="checkbox">
+      <mat-option value=1>ATIVO</mat-option>
+      <mat-option value=2>AUSENTE</mat-option>
     </mat-select>
   </mat-form-field>
 
